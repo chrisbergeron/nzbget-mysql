@@ -47,13 +47,15 @@ mysql> quit
 ```
 
 The end result should be a table with 3 columns:
-```+------------+--------------+------+-----+-------------------+-----------------------------+
+```
++------------+--------------+------+-----+-------------------+-----------------------------+
 | Field      | Type         | Null | Key | Default           | Extra                       |
 +------------+--------------+------+-----+-------------------+-----------------------------+
 | id         | int(11)      | NO   | PRI | NULL              | auto_increment              |
 | nzb        | varchar(255) | YES  |     | NULL              |                             |
 | entry_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
-+------------+--------------+------+-----+-------------------+-----------------------------+```
++------------+--------------+------+-----+-------------------+-----------------------------+
+```
 
 ## NZBGet-MySQL Configuration: ##
 In NZBGet go to `Settings` and at the bottom left you should see `MYSQL-LOG`:
