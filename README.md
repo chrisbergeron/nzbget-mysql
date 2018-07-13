@@ -23,7 +23,7 @@ Fell free to create a Pull Request (PR) and submit improvements.  I'm new to Pyt
 ## Installation: ##
 Download and copy the Mysql-Log.py file from this repo into your `NZBGet/scripts` directory.  Alternatively, you can clone this repo directly into the /scripts/ directory:
 ```
-# This directory will be where YOUR NZBGet installation is
+# This directory will be where YOUR NZBGet installation is (`/opt/nzbget/` in this example)
 cd /opt/nzbget/scripts
 git clone https://github.com/chrisbergeron/nzbget-mysql.git
 mv nzbget-mysql/Mysql-Log.py .
