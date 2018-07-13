@@ -4,7 +4,7 @@
 
 This Plugin for NZBGet inserts a record into a user specified MySQL database.  It only requires these configuration options:
 - the hostname of the mysql database server
-- the port mysql is listening on
+- the port mysql is listening on (optional)
 - the mysql username
 - the mysql password
 - the name of the mysql database
@@ -12,7 +12,7 @@ This Plugin for NZBGet inserts a record into a user specified MySQL database.  I
 
 This script is written in python and it requires the installation of the pymsql module: `sudo pip install pymysql`
 
-The purpose of this script is to allow you to create a dashboard or other reporting around your downloads.  Using Grafana or the Kibana dashboard you can create neat visualizations.
+The purpose of this script is to allow you to create a dashboard or other reporting around your downloads.  Using Grafana or the Kibana dashboard you can create neat glanceboards.
 
 Here's a very simple example:
 ![Simple Kibana Visualization](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/kibana_visualization.png)
@@ -29,14 +29,34 @@ git clone https://github.com/chrisbergeron/nzbget-mysql.git
 mv nzbget-mysql/Mysql-Log.py .
 ```
 
-## Create the mysql database
+## MySQL / MariaDB Configuration: ##
 You can use the included SQL file to create the mysql database and table.  You can customize the mysql database and table names.  Create them with:
 ```
 mysql -u username -p -h db-hostname database_name < create-database.sql.txt
 ```
+Alternatively, you can create the database manually:
+```
+mysql> CREATE DATABASE nzbs;
+mysql> CREATE TABLE `mynzbs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nzb` varchar(255) DEFAULT NULL,
+  `entry_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+);
+mysql> quit
+```
 
-## Configuration: ##
-In NZBGet go into `Settings` and at the bottom left you should see `ESLOG`:
+The end result should be a table with 3 columns:
+```+------------+--------------+------+-----+-------------------+-----------------------------+
+| Field      | Type         | Null | Key | Default           | Extra                       |
++------------+--------------+------+-----+-------------------+-----------------------------+
+| id         | int(11)      | NO   | PRI | NULL              | auto_increment              |
+| nzb        | varchar(255) | YES  |     | NULL              |                             |
+| entry_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
++------------+--------------+------+-----+-------------------+-----------------------------+```
+
+## NZBGet-MySQL Configuration: ##
+In NZBGet go to `Settings` and at the bottom left you should see `MYSQL-LOG`:
 ![Configuring Plugin](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/configuring-plugin.png)
 
 Add the hostname of your MySQL instance (not Kibana or Logstash) and the Port number it's listening on (default is 9200).
