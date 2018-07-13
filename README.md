@@ -23,7 +23,7 @@ Fell free to create a Pull Request (PR) and submit improvements.  I'm new to Pyt
 ## Installation: ##
 Download and copy the Mysql-Log.py file from this repo into your `NZBGet/scripts` directory.  Alternatively, you can clone this repo directly into the /scripts/ directory:
 ```
-# This directory will be where YOUR NZBGet installation is (`/opt/nzbget/` in this example)
+# This directory will be where YOUR NZBGet installation is (/opt/nzbget/ in this example)
 cd /opt/nzbget/scripts
 git clone https://github.com/chrisbergeron/nzbget-mysql.git
 mv nzbget-mysql/Mysql-Log.py .
@@ -33,6 +33,7 @@ mv nzbget-mysql/Mysql-Log.py .
 You can use the included SQL file to create the mysql database and table.  You can customize the mysql database and table names.  Create them with:
 ```
 mysql -u username -p -h db-hostname database_name < create-database.sql.txt
+Enter password:
 ```
 Alternatively, you can create the database manually:
 ```
@@ -75,4 +76,4 @@ If configured properly, you'll see lines like this in your NZBGet `Messages`:
 - [Mysql-Log.py forum post](https://forum.nzbget.net/viewtopic.php?f=8&t=3238) - conversation about this script/plugin
 - [Home page (nzbget.net)](http://nzbget.net) - for first time visitors, learn more about NZBGet
 - [Forum](http://forum.nzbget.net) - get support, share your ideas, extension scripts, etc
-- [My Blog Post](http://chrisbergeron.com/2018/06/10/nzbget_mysql_script/) - introducing the script to the world
+- [My Blog Post](http://chrisbergeron.com/2018/07/12/nzbget-mysql/) - introducing the script to the world

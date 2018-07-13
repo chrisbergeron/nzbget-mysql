@@ -8,12 +8,13 @@
 
 # Log output to MySQL
 #
-# Inserts NZB Name into MySQL.  Options are database server, database port, database username, database password, database.
+# Inserts NZB Name into MySQL.  Options are database server, database port, 
+# database username, database password, database.
 #
 # NOTE: This script requires Python to be installed on your system and a
 # couple of python modules (pip install influxdb && pip install requests)
 #
-# Visit:  https://chrisbergeron.com/ for more information
+# Visit:  http://chrisbergeron.com/2018/07/12/nzbget-mysql/ for more information
 
 ##############################################################################
 ### OPTIONS                                                                ###
@@ -41,7 +42,7 @@
 
 import os, sys
 import datetime
-import requests
+# import requests
 import pymysql.cursors
 import pymysql
 pymysql.install_as_MySQLdb()
