@@ -56,7 +56,7 @@ POSTPROCESS_NONE=95
 # Check if the script is called from nzbget 15.0 or later
 if not 'NZBOP_NZBLOG' in os.environ:
     print('*** NZBGet post-processing script ***')
-    print('Env var NZBOP_NZBLOG not set.  This script is intended to be called from nzbget (15.0 or later).')
+    print('This script is intended to be called from nzbget (15.0 or later).')
     sys.exit(POSTPROCESS_ERROR)
 
 # Make sure all our options are set (Settings -> InfluxLog)
