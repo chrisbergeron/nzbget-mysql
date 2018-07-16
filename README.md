@@ -12,11 +12,10 @@ This Plugin for NZBGet inserts a record into a user specified MySQL database.  I
 
 This script is written in python and it requires the installation of the pymsql module: `sudo pip install pymysql`
 
-The purpose of this script is to allow you to create a dashboard or other reporting around your downloads.  Using Grafana or the Kibana dashboard you can create neat glanceboards.
+The purpose of this script is to allow you to create a dashboard or other reporting around your downloads.  You can use Grafana or write your own frontend to create neat glanceboards.
 
 Here's a very simple example:
-![Simple Kibana Visualization](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/kibana_visualization.png)
-![Simple Kibana Search](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/kibana_search.png)
+![Simple Grafana Table](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/grafana-nzbget-table.png)
 
 Fell free to create a Pull Request (PR) and submit improvements.  I'm new to Python and there are a lot of areas for improvement in this plugin.
 
@@ -29,7 +28,7 @@ git clone https://github.com/chrisbergeron/nzbget-mysql.git
 mv nzbget-mysql/Mysql-Log.py .
 ```
 
-## MySQL / MariaDB Configuration: ##
+## MySQL / MariaDB Configuration ##
 You can use the included SQL file to create the mysql database and table.  You can customize the mysql database and table names.  Create them with:
 ```
 mysql -u username -p -h db-hostname database_name < create-database.sql.txt
@@ -46,7 +45,6 @@ mysql> CREATE TABLE `mynzbs` (
 );
 mysql> quit
 ```
-
 The end result should be a table with 3 columns:
 ```
 +------------+--------------+------+-----+-------------------+-----------------------------+
@@ -58,22 +56,22 @@ The end result should be a table with 3 columns:
 +------------+--------------+------+-----+-------------------+-----------------------------+
 ```
 
-## NZBGet-MySQL Configuration: ##
+## NZBGet-MySQL Configuration ##
 In NZBGet go to `Settings` and at the bottom left you should see `MYSQL-LOG`:
 ![Configuring Plugin](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/configuring-plugin.png)
 
-Add the hostname of your MySQL instance (not Kibana or Logstash) and the Port number it's listening on (default is 9200).
+Add the hostname of your MySQL instance and the Port number it's listening on (default is 3306).
 
 If configured properly, you'll see lines like this in your NZBGet `Messages`:
 ![Sample Log Output](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/nzbget-example-log-entry.png)
 
 ## Roadmap: ##
 - [ ] Separate Show Name, Episode Name, Season and Episode info, Quality and Crew into separate rows
-- [ ] Add case statement to parse and map NZBGet output codes into disposition names
+- [ ] Log NZBGet status codes
 
 ## Questions / Comments? ##
 
 - [Mysql-Log.py forum post](https://forum.nzbget.net/viewtopic.php?f=8&t=3238) - conversation about this script/plugin
 - [Home page (nzbget.net)](http://nzbget.net) - for first time visitors, learn more about NZBGet
 - [Forum](http://forum.nzbget.net) - get support, share your ideas, extension scripts, etc
-- [My Blog Post](http://chrisbergeron.com/2018/07/12/nzbget-mysql/) - introducing the script to the world
+- [My Blog Post](http://chrisbergeron.com/2018/07/12/nzbget-mysql/) - introductory post
