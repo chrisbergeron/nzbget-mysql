@@ -72,6 +72,6 @@ If configured properly, you'll see lines like this in your NZBGet `Messages`:
 ## Questions / Comments? ##
 
 - [Mysql-Log.py forum post](https://forum.nzbget.net/viewtopic.php?f=8&t=3263) - conversation about this script/plugin
+- [My Blog Post](http://chrisbergeron.com/2018/07/12/nzbget-mysql/) - introductory post
 - [Home page (nzbget.net)](http://nzbget.net) - for first time visitors, learn more about NZBGet
 - [Forum](http://forum.nzbget.net) - get support, share your ideas, extension scripts, etc
-- [My Blog Post](http://chrisbergeron.com/2018/07/12/nzbget-mysql/) - introductory post
