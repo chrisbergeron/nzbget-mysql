@@ -58,12 +58,12 @@ The end result should be a table with 3 columns:
 
 ## NZBGet-MySQL Configuration ##
 In NZBGet go to `Settings` and at the bottom left you should see `MYSQL-LOG`:
-![Configuring Plugin](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/configuring-plugin.png)
+![Configuring Plugin](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/configuring-extension.png)
 
 Add the hostname of your MySQL instance and the Port number it's listening on (default is 3306).
 
 If configured properly, you'll see lines like this in your NZBGet `Messages`:
-![Sample Log Output](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/nzbget-example-log-entry.png)
+![Sample Log Output](https://raw.githubusercontent.com/chrisbergeron/nzbget-mysql/master/screenshots/nzbget-mysql-example-log-entry.png)
 
 ## Roadmap: ##
 - [ ] Separate Show Name, Episode Name, Season and Episode info, Quality and Crew into separate rows
